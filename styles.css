@@ -5,6 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background: linear-gradient(to bottom, #DBE7FC, #3e59b3);
 }
 
 main {
@@ -110,23 +111,61 @@ h2 {
 }
 
 .big {
-    font-size: large;
+    font-size: larger;
 }
 
 .medium {
-    font-size: small;
+    font-size: medium;
 }
 
-.path-content {
+.timeline {
+    position: relative;
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
-.path-item {
-    width: 30%;
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 10px;
+    right: 10px;
+    height: 4px;
+    background: #333; /* Color of the timeline */
+}
+
+.timeline-item {
+    position: relative;
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+    margin-top: 80px;
     text-align: center;
-    margin: 20px;
+}
+
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    top: -40.5px; /* Adjust this value to control the distance between the timeline line and the timeline item */
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: #333;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
+h3 {
+    color: #333;
+}
+
+#path {
+    padding-top: 20px;
+    padding-bottom: 40px;
 }
 
 footer {
@@ -137,5 +176,4 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 10px;
 }
