@@ -74,9 +74,11 @@ h2 {
 #me {
     width: 40%;
     height: auto;
-    border-radius: 50%;
+    border: 10px solid #fff; /* White border */
+    border-radius: 120px; /* Adjust the border-radius for a rounded frame */
     display: block;
     margin-top: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adding a subtle shadow */
 }
 
 .bigHome {
@@ -125,16 +127,6 @@ h2 {
     margin-top: 20px;
 }
 
-.timeline:before {
-    content: '';
-    position: absolute;
-    top: 15%;
-    left: 10px;
-    right: 10px;
-    height: 4px;
-    background: #333; /* Color of the timeline */
-}
-
 .timeline-item {
     position: relative;
     flex: 1;
@@ -143,20 +135,26 @@ h2 {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 0 10px;
-    margin-top: 80px;
+    margin-top: 40px;
     text-align: center;
+    transition: transform 0.3s ease; /* Adding a transition for the zoom effect */
 }
 
-.timeline-item:before {
-    content: '';
-    position: absolute;
-    top: -40.5px; /* Adjust this value to control the distance between the timeline line and the timeline item */
-    left: 50%;
-    width: 20px;
-    height: 20px;
-    background: #333;
-    border-radius: 50%;
-    transform: translateX(-50%);
+.timeline-item:hover {
+    transform: scale(1.1); /* Zoom in effect on hover */
+}
+
+.timeline-item:hover:before {
+    background: #fff; /* Color change effect on hover */
+}
+
+.timeline-item:hover p {
+    opacity: 1; /* Show additional text on hover */
+}
+
+.timeline-item p {
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Adding a transition for the text fade-in effect */
 }
 
 h3 {
@@ -166,6 +164,79 @@ h3 {
 #path {
     padding-top: 20px;
     padding-bottom: 40px;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    height: 250px; /* Adjust the height as needed */
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease; /* Adding a transition for the fade-out effect */
+    margin: -150px 0 0 0; 
+}
+
+.text-content {
+    position: absolute;
+    top: 0;
+    left: 10;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Adding a transition for the fade-in effect */
+}
+
+.timeline-item:hover .image-container img {
+    opacity: 0; /* Fade out the image on hover */
+}
+
+.timeline-item:hover .text-content {
+    opacity: 1; /* Fade in the text content on hover */
+}
+
+.certificate-box {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease; /* Adding a transition for the zoom effect */
+    cursor: pointer;
+    height: 120px; /* Adjust the height as needed */
+}
+
+.certificate-box:hover {
+    transform: scale(1.05); /* Zoom in effect on hover */
+}
+
+.certificate-box h3 {
+    color: #333;
+}
+
+.certificate-box p {
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Adding a transition for the text fade-in effect */
+}
+
+.certificate-box:hover p {
+    opacity: 1; /* Show additional text on hover */
+}
+
+#certs {
+    display: flex;
+    justify-content: space-around; /* Adjust as needed */
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+    padding-top: 20px;
 }
 
 footer {

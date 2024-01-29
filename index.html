@@ -19,6 +19,7 @@
             <ul><a href="#about">Sobre</a></ul>
             <ul><a href="#path">Percurso</a></ul>
             <ul><a href="#projects">Projetos</a></ul>
+            <ul><a href="#certs">Certificados</a></ul>
             <ul><a href="#contact">Contactos</a></ul>
         </div>
     </nav>
@@ -47,39 +48,69 @@
 
     <section id="path">
         <h2>O Meu Percurso</h2>
-        <div class="timeline">
-            <div class="timeline-item center">
-                <h3>2018</h3>
-                <p class="big">Entrada no secundário</p>
-                <p class="medium">No Curso de Ciências e Tecnologias</p>
-                <p class="medium">Na Escola Secundária Frei Heitor Pinto</p>
-            </div>
-            <div class="timeline-item center">
-                <h3>2021</h3>
-                <p class="big">Entrada na Universidade da Beira Interior (UBI)</p>
-                <p class="medium">Na Licenciatura em Engenharia Informática</p>
-            </div>
-            <div class="timeline-item center">
-                <h3>2022</h3>
-                <p class="big">Trabalho como Barman</p>
-                <p class="medium">Piscina da Orca (Fundão), Entre Julho e Agosto</p>
-            </div>
-            <div class="timeline-item center">
-                <h3>2023</h3>
-                <p class="big">Estágio de Verão</p>
-                <p class="medium">Celfinet, Entre Julho e Setembro</p>
-                <p class="medium">Departamento de Data Management & Analytics</p>
-            </div>
-            <div class="timeline-item center">
-                <h3>2024</h3>
-                <p class="big">Conclusão da Licenciatura</p>
-                <p class="medium">Em Engenharia Informática</p>
+        <!-- Add a container for the tooltip content -->
+        <div class="tooltip-container">
+            <div class="timeline">
+                <div class="timeline-item center" data-tooltip="Entrada no secundário">
+                    <h3>2018</h3>
+                    <div class="image-container">
+                        <img src="secundario.jpg" alt="secundario">
+                    </div>
+                    <div class="text-content">
+                        <p class="big">Entrada no secundário</p>
+                        <p class="medium">No Curso de Ciências e Tecnologias</p>
+                        <p class="medium">Na Escola Secundária Frei Heitor Pinto (ESFHP)</p>
+                    </div>
+                </div>
+                <div class="timeline-item center" data-tooltip="Entrada na Universidade da Beira Interior (UBI)">
+                    <h3>2021</h3>
+                    <div class="image-container">
+                        <img src="secundario.jpg" alt="secundario">
+                    </div>
+                    <div class="text-content">
+                        <p class="big">Entrada no Ensino Superior</p>
+                        <p class="medium">Na Licenciatura em Engenharia Informática</p>
+                        <p class="medium">Na Universidade da Beira Interior (UBI)</p>
+                    </div>
+                </div>
+                <div class="timeline-item center" data-tooltip="Trabalho como Barman">
+                    <h3>2022</h3>
+                    <div class="image-container">
+                        <img src="secundario.jpg" alt="secundario">
+                    </div>
+                    <div class="text-content">
+                        <p class="big">Trabalho como Barman</p>
+                        <p class="medium">Nos Meses de Julho e Agosto</p>
+                        <p class="medium">Na Piscina da Orca (Fundão)</p>
+                    </div>
+                </div>
+                <div class="timeline-item center" data-tooltip="Estágio de Verão">
+                    <h3>2023</h3>
+                    <div class="image-container">
+                        <img src="secundario.jpg" alt="secundario">
+                    </div>
+                    <div class="text-content">
+                        <p class="big">Estágio de Verão</p>
+                        <p class="medium">Entre os Meses de Julho e Setembro</p>
+                        <p class="medium">Na Celfinet, Departamento de Data Management & Analytics</p>
+                    </div>
+                </div>
+                <div class="timeline-item center" data-tooltip="Conclusão da Licenciatura">
+                    <h3>2024</h3>
+                    <div class="image-container">
+                        <img src="secundario.jpg" alt="secundario">
+                    </div>
+                    <div class="text-content">
+                        <p class="big">Conclusão da Licenciatura</p>
+                        <p class="medium">Em Engenharia Informática</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="projects">
-        <h2>Projects</h2>
+        <h2>Projetos</h2>
         <div class="project">
             <h3>Project 1</h3>
             <p>Description of Project 1.</p>
@@ -90,6 +121,34 @@
         </div>
         <!-- Add more projects as needed -->
     </section>
+
+    <section>
+        <h2>Certificados</h2>
+        <div id="certs">
+            <div class="certificate-box" onclick="openPdf('Summer_Internship.pdf')">
+                <h3>Estágio de Verão</h3>
+                <p>No Departamento de Data Management & Analytics da Celfinet</p>
+            </div>
+            <div class="certificate-box" onclick="openPdf('IOT.pdf')">
+                <h3>Internet Das Coisas</h3>
+                <p>Formação Sobre os Conceitos Básicos da Internet Of Things (IOT)</p>
+            </div>
+            <div class="certificate-box" onclick="openPdf('Telecom.pdf')">
+                <h3>Telecomunicações</h3>
+                <p>Formação Sobre os Conceitos Básicos de Telecomunicações</p>
+            </div>
+            <div class="certificate-box" onclick="openPdf('Scrum.pdf')">
+                <h3>Scrum</h3>
+                <p>Gestão de Projetos com Métodos Ágeis</p>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        function openPdf(pdfUrl) {
+            window.open(pdfUrl, '_blank');
+        }
+    </script>
 
     <section id="contact">
         <h2>Contactos</h2>
