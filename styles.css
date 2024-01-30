@@ -16,36 +16,6 @@ main {
     justify-content: center;
 }
 
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #333;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-}
-
-nav .left, nav .right {
-    display: flex;
-    align-items: center;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 10px;
-}
-
-nav p, nav a {
-    text-decoration: none;
-    color: #fff;
-    margin: 0;
-}
-
 section {
     padding: 40px;
 }
@@ -71,26 +41,70 @@ h2 {
     flex: 1;
 }
 
+.social-icons a {
+    color: #333;
+    font-size: 30px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #000000; /* Change to the desired hover color */
+}
+
+.mail {
+    color: #333;
+    font-size: 20px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+    align-items: center;
+}
+
+.cv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.cv a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #3e59b3;
+    border: 2px solid #3e59b3;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cv a:hover {
+    background-color: #3e59b3;
+    color: #fff;
+}
+
 #me {
     width: 40%;
     height: auto;
-    border: 10px solid #fff; /* White border */
-    border-radius: 120px; /* Adjust the border-radius for a rounded frame */
+    border: 10px solid #fff;
+    border-radius: 200px;
     display: block;
     margin-top: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adding a subtle shadow */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .bigHome {
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 .giantHome {
-    font-size: 5em;
+    font-size: 4em;
 }
 
 .mediumHome {
-    font-size: 1.2em;
+    font-size: 1.15em;
 }
 
 .center {
@@ -105,7 +119,17 @@ h2 {
 }
 
 .about-content {
-    display: flex;
+    line-height: 1.6;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.about-content strong {
+    color: #3e59b3; /* Change the color of strong elements (e.g., bold text) */
+}
+
+.about-content em {
+    font-style: italic; /* Italicize emphasized text */
 }
 
 .project {
@@ -137,24 +161,24 @@ h2 {
     margin: 0 10px;
     margin-top: 40px;
     text-align: center;
-    transition: transform 0.3s ease; /* Adding a transition for the zoom effect */
+    transition: transform 0.3s ease;
 }
 
 .timeline-item:hover {
-    transform: scale(1.1); /* Zoom in effect on hover */
+    transform: scale(1.1);
 }
 
 .timeline-item:hover:before {
-    background: #fff; /* Color change effect on hover */
+    background: #fff;
 }
 
 .timeline-item:hover p {
-    opacity: 1; /* Show additional text on hover */
+    opacity: 1;
 }
 
 .timeline-item p {
     opacity: 0;
-    transition: opacity 0.3s ease; /* Adding a transition for the text fade-in effect */
+    transition: opacity 0.3s ease;
 }
 
 h3 {
@@ -169,13 +193,13 @@ h3 {
 .image-container {
     position: relative;
     overflow: hidden;
-    height: 250px; /* Adjust the height as needed */
+    height: 250px;
 }
 
 .image-container img {
     width: 100%;
     height: auto;
-    transition: opacity 0.3s ease; /* Adding a transition for the fade-out effect */
+    transition: opacity 0.3s ease;
     margin: -150px 0 0 0; 
 }
 
@@ -190,15 +214,15 @@ h3 {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: opacity 0.3s ease; /* Adding a transition for the fade-in effect */
+    transition: opacity 0.3s ease;
 }
 
 .timeline-item:hover .image-container img {
-    opacity: 0; /* Fade out the image on hover */
+    opacity: 0;
 }
 
 .timeline-item:hover .text-content {
-    opacity: 1; /* Fade in the text content on hover */
+    opacity: 1;
 }
 
 .certificate-box {
@@ -209,13 +233,13 @@ h3 {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s ease; /* Adding a transition for the zoom effect */
+    transition: transform 0.3s ease;
     cursor: pointer;
-    height: 120px; /* Adjust the height as needed */
+    height: 120px;
 }
 
 .certificate-box:hover {
-    transform: scale(1.05); /* Zoom in effect on hover */
+    transform: scale(1.05);
 }
 
 .certificate-box h3 {
@@ -224,19 +248,20 @@ h3 {
 
 .certificate-box p {
     opacity: 0;
-    transition: opacity 0.3s ease; /* Adding a transition for the text fade-in effect */
+    transition: opacity 0.3s ease;
 }
 
 .certificate-box:hover p {
-    opacity: 1; /* Show additional text on hover */
+    opacity: 1;
 }
 
 #certs {
     display: flex;
-    justify-content: space-around; /* Adjust as needed */
+    justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+    flex-wrap: wrap; 
     padding-top: 20px;
+    padding-bottom: 40px;
 }
 
 footer {

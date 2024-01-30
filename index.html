@@ -6,49 +6,67 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <title>António Cruz - Portfolio</title>
 </head>
 <body>
-    <nav>
-        <div class="left">
-            <ul><p>António Cruz</p></ul>
-            <ul><p>Web Developer</p></ul>
-        </div>
-        <div class="right">
-            <ul><a href="#about">Sobre</a></ul>
-            <ul><a href="#path">Percurso</a></ul>
-            <ul><a href="#projects">Projetos</a></ul>
-            <ul><a href="#certs">Certificados</a></ul>
-            <ul><a href="#contact">Contactos</a></ul>
-        </div>
-    </nav>
-
     <section id="home">
         <div class="text">
-            <h2 class="center bigHome">Olá! O meu nome é</h2>
-            <h1 class="center giantHome">António Cruz</h1>
-            <h2 class="center bigHome">e sou recém-licenciado em Engenharia Informática.</h2>
-            <p class="center mediumHome">Depois de três anos de muita aprendizagem e evolução a nível pessoal e profissional, procuro entrar no mundo do trabalho e continuar a desenvolver as minhas capacidades.</p>
+            <p class="center bigHome">Olá! O meu nome é</p>
+            <p class="center giantHome">António Cruz</p>
+            <p class="center bigHome">e sou recém-licenciado em Engenharia Informática,</p>
+            <p class="center mediumHome"> para além de ser um entusiasta em desenvolvimento de software e inteligência artificial.
+                Procuro agora uma oportunidade de trabalho para desenvolver as minhas capacidades e crescer como profissional e como pessoa.
+            </p>
+            <div class="cv">
+                <a href="CV-AntonioCruz.pdf" target="_blank">Curriculum Vitae</a>
+            </div>
         </div>
         <div class="image">
             <img id="me" src="me.jpg" alt="me.jpg">
+            <h2>Contacte-me</h2>
+            <p class="medium mail"><i class="fa-solid fa-square-envelope mail"></i> appaiscruz@gmail.com</p>
+            <a href="mailto:appaiscruz@gmail.com"></a>
+            <h2>Ou Encontre-me Online!</h2>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/antonio-cruz-ac21" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Tope-do-Drip" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
         </div>
     </section>
 
     <section id="about">
         <h2>Sobre Mim</h2>
         <div class="about-content">
-            <p>Estudante responsável, dedicado e trabalhador, encontro-me atualmente a caminho do terceiro ano da licenciatura de engenharia informática, 
-                na Universidade da Beira Interior, com o sonho de trabalhar na área num futuro próximo. Fluente em português e inglês, com grande capacidade
-                de comunicação e organização, espírito de equipa, muita ambição e iniciativa para aprender, procuro ganhar experiência para desenvolver 
-                o meu trabalho e crescer como pessoa.</p>
+            <p>Após o término da Licenciatura em Engenharia Informática, na Universidade da Beira Interior (UBI) procuro atualmente entrar no mercado de trabalho, 
+                dentro da área, para ganhar experiência, crescer como profissional e Ser Humano, e desenvolver as minhas capacidades, tanto hard skills como soft skills. 
+                Português é a minha língua materna, mas sou também fluente em inglês.
+                Adoro conversar, conhecer novas pessoas e aprender com elas, sendo muito curioso e querendo sempre saber mais sobre outras culturas, 
+                línguas, experiências e formas de pensar.
+                Apesar de gostar um pouco de tudo dentro da informática, sou um entusiasta em desenvolvimento de software e inteligência artificial, 
+                sendo estas as áreas em que mais gostei de trabalhar durante a minha licenciatura, depois de tantos projetos realizados, e também as áreas que tenho mais 
+                interesse em desenvolver e aprender. 
+                Não gosto de não ter nada para fazer, gosto de ocupar o meu tempo a aprender coisas novas, dando muita importância à cultura geral,
+                e aproveitando sempre para aprender novas tecnologias e para as tentar aplicar em projetos pessoais, como forma de melhorar as minhas capacidades e de
+                me manter atualizado. 
+                Para além disso, gosto de desporto, tendo sido já federado em basquetebol, dos 5 aos 14 anos, gosto de ler e ver filmes ou séries, 
+                com um gosto especial por livros de mistério, ficção científica, ação e aventura e, claro, é sempre bom jogar um pouco de vez em quando.
+                Sou um amante de música e ouvi-la faz parte do meu dia-a-dia. Gosto também de tocar, tendo tido aulas de violino durante dois anos
+                e tendo aprendido a tocar piano e guitarra sozinho, pois é uma forma de relaxar e de me divertir. Para além disto também adoro cantar,
+                sendo parte do Coro Misto da Beira Interior desde 2017, tendo participado em vários concertos e concursos nacionais e internacionais e fazendo assim
+                muitas boas memórias que guardo para a vida.
+                Sou uma pessoa muito organizada e metódica, gosto de planear as coisas com antecedência e de ter tudo bem organizado,
+                pois acredito que assim consigo ser mais produtivo e eficiente. Sou um pouco perfecionista, pelo que gosto de deixar sempre tudo o melhor possível
+                e dou sempre o meu melhor em tudo o que faço. Sou também uma pessoa muito responsável, empenhada e dedicada, que gosta de trabalhar em equipa e 
+                de ajudar os outros. Sou uma pessoa muito positiva, que gosta de ver o lado bom das coisas e acho que a vida é feita de desafios e obstáculos, 
+                mas também de oportunidades e memórias, pelo que é importante ultrapassar as dificuldades e aproveitar as oportunidades.
+            </p>
         </div>
     </section>
 
     <section id="path">
         <h2>O Meu Percurso</h2>
-        <!-- Add a container for the tooltip content -->
         <div class="tooltip-container">
             <div class="timeline">
                 <div class="timeline-item center" data-tooltip="Entrada no secundário">
@@ -149,13 +167,6 @@
             window.open(pdfUrl, '_blank');
         }
     </script>
-
-    <section id="contact">
-        <h2>Contactos</h2>
-        <p>Email: <!-- <a href="mailto:appaiscruz@gmail.com"> -->appaiscruz@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/antonio-cruz-ac21/" target="_blank">linkedin.com/in/antonio-cruz-ac21</a></p>
-        <p>GitHub: <a href="https://github.com/Tope-do-Drip" target="_blank">github.com/Tope-do-Drip</a></p>
-    </section>
     
     <footer>
         <p>&copy; 2024 António Cruz. All rights reserved.</p>
