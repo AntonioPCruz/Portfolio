@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -14,7 +15,7 @@
     <section id="home">
         <div class="text">
             <p class="center bigHome">Olá! O meu nome é</p>
-            <p class="center giantHome">António Cruz</p>
+            <h1 data-value="ANTÓNIO CRUZ">ANTÓNIO CRUZ</h1>
             <p class="center bigHome">e sou recém-licenciado em Engenharia Informática,</p>
             <p class="center mediumHome"> para além de ser um entusiasta em desenvolvimento de software e inteligência artificial.
                 Procuro agora uma oportunidade de trabalho para desenvolver as minhas capacidades e crescer como profissional e como pessoa.
@@ -129,15 +130,37 @@
 
     <section id="projects">
         <h2>Projetos</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of Project 1.</p>
+        <div id="cards">
+            <div class="card">
+                <a href="https://github.com/zazedd/solar-system" target="_blank"></a>
+                <div class="card-content">
+                    <img src="solarSystem.png" alt="solarSystem">
+                    <h3>Sistema Solar</h3>  
+                    <h4>Uma pequena simulação gráfica, em OpenGL (C++)</h4>
+                </div>
+            </div>
+            <div class="card">
+                <a href="https://github.com/zazedd/sentimentalyst" target="_blank"></a>
+                <div class="card-content">
+                    <img src="sentimentalyst.png" alt="sentimentalyst">
+                    <h3>Sentimentalyst</h3>  
+                    <h4>Uma aplicação que deteta os sentimentos de uma frase</h4>
+                </div>
+            </div>
+            <div class="card">
+                <a href="https://github.com/zazedd/money" target="_blank"></a>
+                <div class="card-content">
+                    <img src="sentimentalyst.png" alt="money">
+                    <h3>Money</h3>  
+                    <h4>Uma aplicação móvel para gestão de orçamentos de uma empresa de construção civil</h4>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Adios</h3>  
+                    <h4>See you...</h4>
+                </div>
         </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>Description of Project 2.</p>
-        </div>
-        <!-- Add more projects as needed -->
     </section>
 
     <section>
