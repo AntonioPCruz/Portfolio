@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
 document.getElementById("cards").onmousemove = e => {
     for(const card of document.getElementsByClassName("card")) {
       const rect = card.getBoundingClientRect(),

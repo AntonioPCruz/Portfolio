@@ -33,7 +33,7 @@ h2 {
 
 .text {
     flex: 1;
-    margin-top: 30px;
+    margin-top: 100px;
     margin-left: 80px;
 }
 
@@ -49,7 +49,7 @@ h2 {
 }
 
 .social-icons a:hover {
-    color: #000000; /* Change to the desired hover color */
+    color: #000000;
 }
 
 .mail {
@@ -64,7 +64,8 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 60px;
+    margin-bottom: 20px;
 }
 
 .cv a {
@@ -83,16 +84,6 @@ h2 {
 .cv a:hover {
     background-color: #3e59b3;
     color: #fff;
-}
-
-#me {
-    width: 40%;
-    height: auto;
-    border: 10px solid #fff;
-    border-radius: 200px;
-    display: block;
-    margin-top: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
@@ -127,6 +118,95 @@ h1:hover {
     justify-content: center;
 }
 
+#me {
+    width: 99%;
+    height: auto;
+    display: block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.box span {
+    position: absolute;
+    inset: 5px;
+    border-radius: 16px;
+    background: #0c1022;
+    z-index: 1;
+}
+
+.border-blur {
+    position: absolute;
+    width: 300px;
+    height: 650px;
+    background: transparent;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    filter: blur(100px);
+    z-index: 0;
+}
+
+.box {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.border-blur::before,
+.border-blur::after {
+    border-radius: 50%;
+    height: 400px !important;
+    width: 500px !important;
+}
+
+.box::after,
+.border-blur::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-image: conic-gradient(
+        transparent,
+        transparent,
+        transparent,
+        #d400d4
+    );
+    animation: animate 4s linear infinite;
+    animation-delay: -2s;
+}
+
+.box::before,
+.border-blur::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-image: conic-gradient(
+        transparent,
+        transparent,
+        transparent,
+        #00ccff
+    );
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .about-content {
     line-height: 1.6;
     text-align: justify;
@@ -134,11 +214,11 @@ h1:hover {
 }
 
 .about-content strong {
-    color: #3e59b3; /* Change the color of strong elements (e.g., bold text) */
+    color: #3e59b3;
 }
 
 .about-content em {
-    font-style: italic; /* Italicize emphasized text */
+    font-style: italic;
 }
 
 .project {
@@ -232,45 +312,6 @@ h3 {
 
 .timeline-item:hover .text-content {
     opacity: 1;
-}
-
-.certificate-box {
-    flex: 1;
-    margin: 10px;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-    height: 120px;
-}
-
-.certificate-box:hover {
-    transform: scale(1.05);
-}
-
-.certificate-box h3 {
-    color: #333;
-}
-
-.certificate-box p {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.certificate-box:hover p {
-    opacity: 1;
-}
-
-#certs {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap; 
-    padding-top: 20px;
-    padding-bottom: 40px;
 }
 
 #cards {
@@ -388,11 +429,101 @@ h3 {
     z-index: 2;
 }
 
+.certificate-box {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.certificate-box:hover {
+    transform: scale(1.05);
+}
+
+.certificate-box p {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.certificate-box:hover h3,
+.certificate-box:hover p {
+    opacity: 1;
+}
+
+.certificate-box h3 {
+    position: relative;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.certificate-box::before,
+.certificate-box::after {
+    border-radius: inherit;
+    content: "";
+    height: 100%;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    transition: opacity 500ms;
+    width: 100%;
+}
+
+.certificate-box::before {
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.06),
+        transparent 40%
+    );
+    z-index: 3;
+}
+
+.certificate-box::after {
+    background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.4),
+        transparent 40%
+    );
+    z-index: 1;
+}
+
+.certificate-box > .cert-content {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    inset: 1px;
+    padding: 10px;
+    position: absolute;
+    z-index: 2;
+}
+
+#certs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; 
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
     right: 0;
