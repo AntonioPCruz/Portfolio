@@ -5,7 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: linear-gradient(to bottom, #DBE7FC, #3e59b3);
+    background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
 }
 
 main {
@@ -22,7 +22,7 @@ section {
 
 h2 {
     font-size: xx-large;
-    color: #333;
+    color: #cccccc;
 }
 
 #home {
@@ -35,6 +35,7 @@ h2 {
     flex: 1;
     margin-top: 100px;
     margin-left: 80px;
+    color: #cccccc;
 }
 
 .image {
@@ -42,18 +43,18 @@ h2 {
 }
 
 .social-icons a {
-    color: #333;
+    color: #cccccc;
     font-size: 30px;
     margin: 0 10px;
     transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #000000;
+    color: #444444;
 }
 
 .mail {
-    color: #333;
+    color: #cccccc;
     font-size: 20px;
     margin: 0 10px;
     transition: color 0.3s ease;
@@ -75,14 +76,14 @@ h2 {
     padding: 10px 20px;
     border-radius: 20px;
     background-color: #fff;
-    color: #3e59b3;
-    border: 2px solid #3e59b3;
+    color: #696969;
+    border: 2px solid #696969;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .cv a:hover {
-    background-color: #3e59b3;
+    background-color: #696969;
     color: #fff;
 }
 
@@ -163,8 +164,8 @@ h1:hover {
 .border-blur::before,
 .border-blur::after {
     border-radius: 50%;
-    height: 400px !important;
-    width: 500px !important;
+    height: 450px !important;
+    width: 450px !important;
 }
 
 .box::after,
@@ -211,6 +212,7 @@ h1:hover {
     line-height: 1.6;
     text-align: justify;
     font-size: 18px;
+    color: #cccccc;
 }
 
 .about-content strong {
@@ -221,21 +223,27 @@ h1:hover {
     font-style: italic;
 }
 
-#image-track {
+.gallery {
+    width: 80%;
+    height: 80%;
+    margin: auto;
     display: flex;
-    gap: 4vmin;
-    position: relative;
-    transform: translate(0%, -50%); 
-    user-select: none; /* -- Prevent image highlighting -- */
-    margin-top: 300px;
-    margin-bottom: -280px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
-  
-#image-track > .image {
-    width: 40vmin;
-    height: 56vmin;
+
+.gallery img {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 10px;
+    max-height: 400px;
+    width: auto;
     object-fit: cover;
-    object-position: 100% center;
+    border-radius: 30px;
 }
 
 .big {
@@ -256,7 +264,7 @@ h1:hover {
     position: relative;
     flex: 1;
     padding: 20px;
-    background: #fff;
+    background: #858585;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 0 10px;
@@ -267,10 +275,6 @@ h1:hover {
 
 .timeline-item:hover {
     transform: scale(1.1);
-}
-
-.timeline-item:hover:before {
-    background: #fff;
 }
 
 .timeline-item:hover p {
@@ -330,20 +334,23 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 30px;
+    padding-top: 40px;
 }
 
 .card {
     background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
     height: 360px;
     position: relative;
     width: 500px;
     overflow: hidden;
     transition: transform 0.3s ease;
-    margin-right: 120px;
-    margin-bottom: 50px;
+    margin-right: 50px;
+}
+
+.card h3 {
+    color: #000;
 }
 
 .card:hover {
@@ -445,7 +452,7 @@ h3 {
     flex: 1;
     margin: 10px;
     padding: 20px;
-    background: #fff;
+    background: #858585;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
