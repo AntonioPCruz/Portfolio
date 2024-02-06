@@ -61,3 +61,49 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const nextButton = document.querySelector(".next-btn");
+    const prevButton = document.querySelector(".prev-btn");
+    const galleryImages = document.querySelectorAll(".gallery-image");
+
+    let currentIndex = 0;
+
+    function showImage(index) {
+        const centerIndex = Math.floor(galleryImages.length / 2);
+        const offset = centerIndex - index;
+
+        galleryImages.forEach((image, i) => {
+            const newPosition = (i + offset + galleryImages.length) % galleryImages.length;
+            image.style.order = newPosition;
+        });
+    }
+
+    function swapImages(nextIndex) {
+        const currentImage = galleryImages[currentIndex];
+        const nextImage = galleryImages[nextIndex];
+        const parent = currentImage.parentNode;
+    
+        parent.insertBefore(nextImage, currentImage);
+    
+        const temp = galleryImages[currentIndex];
+        galleryImages[currentIndex] = galleryImages[nextIndex];
+        galleryImages[nextIndex] = temp;
+    }
+    
+    nextButton.addEventListener("click", function () {
+        const nextIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        swapImages(nextIndex);
+        currentIndex = nextIndex;
+        showImage(currentIndex);
+    });
+
+    prevButton.addEventListener("click", function () {
+        const prevIndex = (currentIndex + 1) % galleryImages.length;
+        swapImages(prevIndex);
+        currentIndex = prevIndex;
+        showImage(currentIndex);
+    });
+
+    showImage(currentIndex);
+});
