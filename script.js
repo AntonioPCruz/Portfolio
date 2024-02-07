@@ -67,41 +67,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const prevButton = document.querySelector(".prev-btn");
     const galleryImages = document.querySelectorAll(".gallery-image");
 
-    let currentIndex = 0;
+    const middleIndex = Math.floor(galleryImages.length / 2);
+    let currentIndex = middleIndex;
 
     function showImage(index) {
-        const centerIndex = Math.floor(galleryImages.length / 2);
-        const offset = centerIndex - index;
-
         galleryImages.forEach((image, i) => {
-            const newPosition = (i + offset + galleryImages.length) % galleryImages.length;
-            image.style.order = newPosition;
+            const isMiddle = i === index;
+            image.classList.toggle("zoomed", isMiddle);
         });
+
+        const offset = (middleIndex - index) * (galleryImages[0].offsetWidth + 20);
+        document.querySelector('.gallery-images').style.transform = `translateX(${offset}px)`;
     }
 
-    function swapImages(nextIndex) {
-        const currentImage = galleryImages[currentIndex];
-        const nextImage = galleryImages[nextIndex];
-        const parent = currentImage.parentNode;
-    
-        parent.insertBefore(nextImage, currentImage);
-    
-        const temp = galleryImages[currentIndex];
-        galleryImages[currentIndex] = galleryImages[nextIndex];
-        galleryImages[nextIndex] = temp;
-    }
-    
     nextButton.addEventListener("click", function () {
-        const nextIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-        swapImages(nextIndex);
-        currentIndex = nextIndex;
+        currentIndex = (currentIndex + 1) % galleryImages.length;
         showImage(currentIndex);
     });
 
     prevButton.addEventListener("click", function () {
-        const prevIndex = (currentIndex + 1) % galleryImages.length;
-        swapImages(prevIndex);
-        currentIndex = prevIndex;
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
         showImage(currentIndex);
     });
 
