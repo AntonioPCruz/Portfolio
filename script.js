@@ -92,3 +92,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
     showImage(currentIndex);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const cursor = document.querySelector('.cursor');
+
+    document.addEventListener('mousemove', e => {
+        cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+    })
+
+    document.addEventListener('click', () => {
+        cursor.classList.add("expand");
+
+        setTimeout(() => {
+            cursor.classList.remove("expand");
+        }, 500)
+    })
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+            else {
+                entry.target.classList.remove("show");
+            }
+        });
+    })
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach(element => observer.observe(element));
+});

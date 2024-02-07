@@ -8,6 +8,87 @@ body {
     background: radial-gradient(circle at 24.1% 68.8%, rgb(20, 20, 20) 0%, rgb(0, 0, 0) 99.4%);
 }
 
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    animation: cursorAnim .5s infinite alternate;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.cursor::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border: 8px solid gray;
+    border-radius: 50%;
+    opacity: .5;
+    top: -8px;
+    left: -8px;
+    animation: cursorAnim2 .5s infinite alternate;
+}
+
+@keyframes cursorAnim {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(.7);
+    }
+}
+
+@keyframes cursorAnim2 {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(.4);
+    }
+}
+
+@keyframes cursorAnim3 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(3);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.expand {
+    animation: cursorAnim3 .5s forwards;
+    border: 1px solid #cccccc;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
 main {
     flex: 1;
     display: flex;
@@ -17,7 +98,10 @@ main {
 }
 
 section {
-    padding: 40px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 h2 {
@@ -29,6 +113,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 40px;
 }
 
 .text {
@@ -213,6 +298,7 @@ h1:hover {
     text-align: justify;
     font-size: 18px;
     color: #cccccc;
+    padding-top: 40px;
 }
 
 .about-content strong {
@@ -334,6 +420,7 @@ button i {
     position: relative;
     display: flex;
     justify-content: space-around;
+    padding-top: 100px;
 }
 
 .timeline-item {
@@ -350,7 +437,7 @@ button i {
 }
 
 .timeline-item:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .timeline-item:hover p {
@@ -363,7 +450,7 @@ button i {
 
 .timeline-item p {
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 1s ease;
 }
 
 h3 {
@@ -398,7 +485,7 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 40px;
+    padding-top: 200px;
 }
 
 .card {
