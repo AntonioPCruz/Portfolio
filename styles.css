@@ -89,6 +89,36 @@ body {
     transform: translateX(0);
 }
 
+.name-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle at 24.1% 68.8%, rgb(20, 20, 20) 0%, rgb(0, 0, 0) 99.4%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.huge-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10rem;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-top: 100px;
+    opacity: 0; /* Start with opacity 0 for fade-in effect */
+    transition: opacity 1s ease-out; /* Apply transition only for opacity */
+}
+
+.fade-out {
+    opacity: 0; /* Opacity set to 0 when fade-out class is applied */
+    transition: opacity 1s ease;
+}
+
 main {
     flex: 1;
     display: flex;
@@ -293,22 +323,6 @@ h1:hover {
     }
 }
 
-.about-content {
-    line-height: 1.6;
-    text-align: justify;
-    font-size: 18px;
-    color: #cccccc;
-    padding-top: 40px;
-}
-
-.about-content strong {
-    color: #3e59b3;
-}
-
-.about-content em {
-    font-style: italic;
-}
-
 .gallery {
     width: 80%;
     height: 650px;
@@ -322,6 +336,7 @@ h1:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     position: relative;
+    margin-top: 100px;
 }
 
 .gallery-images {
@@ -416,69 +431,48 @@ button i {
     font-size: medium;
 }
 
+.timeline h2 {
+    margin-top: -150px;
+}
+
 .timeline {
     position: relative;
-    display: flex;
-    justify-content: space-around;
-    padding-top: 100px;
-}
-
-.timeline-item {
-    position: relative;
-    flex: 1;
-    padding: 90px;
-    background: #858585;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 0 10px;
-    margin-top: 40px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.timeline-item:hover {
-    transform: scale(1.05);
-}
-
-.timeline-item:hover p {
-    opacity: 1;
-}
-
-.timeline-item:hover h3 {
-    opacity: 0;
-}
-
-.timeline-item p {
-    opacity: 0;
-    transition: opacity 1s ease;
-}
-
-h3 {
-    color: #333;
-}
-
-#path {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.text-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding-left: 20px;
     width: 90%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    height: 100px;
+    padding-bottom: 500px;
 }
 
-.timeline-item:hover .text-content {
-    opacity: 1;
+.point {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.point:nth-child(4) {
+    top: 20%;
+}
+
+.point:nth-child(5) {
+    top: 70%;
+}  
+
+.point:nth-child(6) {
+    top: 20%;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 50%;
+}
+
+.content {
+    position: absolute;
+    color: #ffffff;
+    text-align: center;
+    transform: translateX(-40%);
 }
 
 #cards {

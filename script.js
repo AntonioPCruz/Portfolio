@@ -1,4 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const nameScreen = document.getElementById("name-screen");
+    const hugeName = document.querySelector(".huge-name");
+    const body = document.querySelector("body");
+
+    function hideNameScreen() {
+        nameScreen.classList.add("fade-out");
+        setTimeout(() => {
+            nameScreen.style.display = "none";
+            body.style.overflow = "auto"; // Revert overflow to auto when hiding name-screen
+        }, 1000);
+    }
+
+    setTimeout(() => {
+        hugeName.style.opacity = 1; // Set opacity to 1 to trigger fade-in effect
+        body.style.overflow = "hidden"; // Hide scrollbar when showing name-screen
+    }, 100);
+
+    setTimeout(() => {
+        hideNameScreen();
+        body.style.overflow = "auto"; // Revert overflow to auto after name-screen disappears
+    }, 3000);
+});
+
+function openPdf(pdfUrl) {
+    window.open(pdfUrl, '_blank');
+}
+
+document.addEventListener("DOMContentLoaded", function () {
     const words = ["ANTONIO", "CRUZ"];
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZÓ";
     let interval = null;
@@ -24,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 clearInterval(interval);
             }
 
-            iteration += 1 / 5;
+            iteration += 1 / 6;
         }, 30);
     }
 
@@ -34,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll("h1[data-value]").forEach(h1Element => {
         h1Element.addEventListener("mouseover", handleMouseOver);
-        startAnimation(h1Element); 
+        setTimeout(() => startAnimation(h1Element), 3100);
     });
 });
 
@@ -123,4 +151,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const hiddenElements = document.querySelectorAll(".hidden");
     hiddenElements.forEach(element => observer.observe(element));
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const points = document.querySelectorAll(".point");
+    const lineContainer = document.querySelector(".line");
+
+    // Function to calculate the distance between two points
+    function calculateDistance(point1, point2) {
+        const x1 = point1.offsetLeft + point1.offsetWidth / 2;
+        const y1 = point1.offsetTop + point1.offsetHeight / 2;
+        const x2 = point2.offsetLeft + point2.offsetWidth / 2;
+        const y2 = point2.offsetTop + point2.offsetHeight / 2;
+
+        return {
+            x1: x1,
+            y1: y1,
+            x2: x2,
+            y2: y2,
+        };
+    }
+
+    // Function to draw lines between each point
+    function drawLines() {
+        lineContainer.innerHTML = ''; // Clear existing lines
+        for (let i = 0; i < points.length - 1; i++) {
+            const startPoint = points[i];
+            const endPoint = points[i + 1];
+            const distance = calculateDistance(startPoint, endPoint);
+
+            // Create and style line element
+            const line = document.createElement("div");
+            line.classList.add("line");
+            line.style.position = "absolute";
+            line.style.left = distance.x1 + "px";
+            line.style.top = distance.y1 - 15 + "px";
+            line.style.width = Math.sqrt((distance.x2 - distance.x1) ** 2 + (distance.y2 - distance.y1) ** 2) + "px";
+            line.style.transformOrigin = "0 50%";
+            line.style.transform = "rotate(" + (Math.atan2(distance.y2 - distance.y1, distance.x2 - distance.x1) * 180 / Math.PI) + "deg)";
+            line.style.background = "#ffffff";
+            line.style.height = "5px";
+
+            // Append line to line container
+            lineContainer.appendChild(line);
+        }
+    }
+
+    // Redraw lines on window resize
+    window.addEventListener("resize", drawLines);
+
+    // Initial drawing of lines
+    drawLines();
 });
