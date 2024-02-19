@@ -1,0 +1,145 @@
+PERCURSO
+html:
+<section class="timeline hidden">
+        <h2>O Meu Percurso</h2>
+        <div class="line"></div>
+        <div class="point" style="left: 10%;">
+          <div class="circle"></div>
+          <div class="content">
+            <h3>2018</h3>
+            <p class="big">Entrada no secundário</p>
+            <p class="medium">No Curso de Ciências e Tecnologias</p>
+            <p class="medium">Na Escola Secundária Frei Heitor Pinto (ESFHP)</p>
+          </div>
+        </div>
+        <div class="point" style="left: 30%;">
+          <div class="circle"></div>
+          <div class="content">
+            <h3>2021</h3>
+            <p class="big">Entrada no Ensino Superior</p>
+            <p class="medium">Na Licenciatura em Engenharia Informática</p>
+            <p class="medium">Na Universidade da Beira Interior (UBI)</p>
+          </div>
+        </div>
+        <div class="point" style="left: 50%;">
+          <div class="circle"></div>
+          <div class="content">
+            <h3>2022</h3>
+            <p class="big">Trabalho como Barman</p>
+            <p class="medium">Nos Meses de Julho e Agosto</p>
+            <p class="medium">Na Piscina da Orca (Fundão)</p>
+          </div>
+        </div>
+        <div class="point" style="left: 70%;">
+          <div class="circle"></div>
+          <div class="content">
+            <h3>2023</h3>
+            <p class="big">Estágio de Verão</p>
+            <p class="medium">Entre os Meses de Julho e Setembro</p>
+            <p class="medium">Na Celfinet, Departamento de Data Management & Analytics</p>
+          </div>
+        </div>
+        <div class="point" style="left: 90%;">
+          <div class="circle"></div>
+          <div class="content">
+            <h3>2024</h3>
+            <p class="big">Conclusão da Licenciatura</p>
+            <p class="medium">Em Engenharia Informática</p>
+          </div>
+        </div>
+    </section>
+css:
+.timeline h2 {
+    margin-top: -150px;
+}
+
+.timeline {
+    position: relative;
+    width: 90%;
+    height: 100px;
+    padding-bottom: 500px;
+}
+
+.point {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.point:nth-child(4) {
+    top: 20%;
+}
+
+.point:nth-child(5) {
+    top: 70%;
+}  
+
+.point:nth-child(6) {
+    top: 20%;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 50%;
+}
+
+.content {
+    position: absolute;
+    color: #ffffff;
+    text-align: center;
+    transform: translateX(-40%);
+}
+js:
+document.addEventListener("DOMContentLoaded", function () {
+    const points = document.querySelectorAll(".point");
+    const lineContainer = document.querySelector(".line");
+
+    // Function to calculate the distance between two points
+    function calculateDistance(point1, point2) {
+        const x1 = point1.offsetLeft + point1.offsetWidth / 2;
+        const y1 = point1.offsetTop + point1.offsetHeight / 2;
+        const x2 = point2.offsetLeft + point2.offsetWidth / 2;
+        const y2 = point2.offsetTop + point2.offsetHeight / 2;
+
+        return {
+            x1: x1,
+            y1: y1,
+            x2: x2,
+            y2: y2,
+        };
+    }
+
+    // Function to draw lines between each point
+    function drawLines() {
+        lineContainer.innerHTML = ''; // Clear existing lines
+        for (let i = 0; i < points.length - 1; i++) {
+            const startPoint = points[i];
+            const endPoint = points[i + 1];
+            const distance = calculateDistance(startPoint, endPoint);
+
+            // Create and style line element
+            const line = document.createElement("div");
+            line.classList.add("line");
+            line.style.position = "absolute";
+            line.style.left = distance.x1 + "px";
+            line.style.top = distance.y1 - 15 + "px";
+            line.style.width = Math.sqrt((distance.x2 - distance.x1) ** 2 + (distance.y2 - distance.y1) ** 2) + "px";
+            line.style.transformOrigin = "0 50%";
+            line.style.transform = "rotate(" + (Math.atan2(distance.y2 - distance.y1, distance.x2 - distance.x1) * 180 / Math.PI) + "deg)";
+            line.style.background = "#ffffff";
+            line.style.height = "5px";
+
+            // Append line to line container
+            lineContainer.appendChild(line);
+        }
+    }
+
+    // Redraw lines on window resize
+    window.addEventListener("resize", drawLines);
+
+    // Initial drawing of lines
+    drawLines();
+});
