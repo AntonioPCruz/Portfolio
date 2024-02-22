@@ -20,4 +20,4 @@ A website where I tell you a bit more about myself, my projects and my skills.
 I've taken some ideas from the following YouTube channels, which I totally recommend you to check out.
 
 - [Beyond Fireship](https://www.youtube.com/@beyondfireship)
-- [Hyperplexed](https://www.youtube.com/@Hyperplexed)https://www.youtube.com/@Hyperplexed
+- [Hyperplexed](https://www.youtube.com/@Hyperplexed)
