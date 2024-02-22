@@ -1,42 +1,22 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const nameScreen = document.getElementById("name-screen");
-    const hugeName = document.querySelector(".huge-name");
-    const body = document.querySelector("body");
-
-    function hideNameScreen() {
-        nameScreen.classList.add("fade-out");
-        setTimeout(() => {
-            nameScreen.style.display = "none";
-            body.style.overflow = "auto"; // Revert overflow to auto when hiding name-screen
-        }, 1000);
-    }
-
-    setTimeout(() => {
-        hugeName.style.opacity = 1; // Set opacity to 1 to trigger fade-in effect
-        body.style.overflow = "hidden"; // Hide scrollbar when showing name-screen
-    }, 100);
-
-    setTimeout(() => {
-        hideNameScreen();
-        body.style.overflow = "auto"; // Revert overflow to auto after name-screen disappears
-    }, 3000);
-});
-
+// Função para abrir um PDF em uma nova aba
 function openPdf(pdfUrl) {
     window.open(pdfUrl, '_blank');
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Array de palavras que constituem o nome e conjunto de letras do alfabeto (e a letra 'Ó')
     const words = ["ANTONIO", "CRUZ"];
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZÓ";
     let interval = null;
 
+    // Função para iniciar a animação
     function startAnimation(element) {
         let iteration = 0;
 
         clearInterval(interval);
 
         interval = setInterval(() => {
+            // Altera as letras de forma aleatória para simular uma animação
             element.innerText = element.innerText
                 .split("")
                 .map((letter, index) => {
@@ -48,24 +28,28 @@ document.addEventListener("DOMContentLoaded", function () {
                 })
                 .join("");
 
+            // Interrompe a animação quando a iteração excede o comprimento da palavra, ou seja, quando o nome é exibido por completo
             if (iteration >= element.dataset.value.length) {
                 clearInterval(interval);
             }
 
-            iteration += 1 / 6;
+            iteration += 1 / 6; // Controla a velocidade da animação
         }, 30);
     }
 
+    // Função para lidar com o evento de passar o mouse sobre o nome
     function handleMouseOver(event) {
         startAnimation(event.target);
     }
 
+    // Inicia a animação para todos os elementos h1 com o atributo 'data-value' quando em hover
     document.querySelectorAll("h1[data-value]").forEach(h1Element => {
         h1Element.addEventListener("mouseover", handleMouseOver);
-        setTimeout(() => startAnimation(h1Element), 3100);
+        setTimeout(() => startAnimation(h1Element), 500); // Inicia a animação automaticamente após 500ms
     });
 });
 
+// Atualiza a posição do ponteiro do rato nas caixas dos projetos
 document.getElementById("cards").onmousemove = e => {
     for(const card of document.getElementsByClassName("card")) {
       const rect = card.getBoundingClientRect(),
@@ -78,6 +62,7 @@ document.getElementById("cards").onmousemove = e => {
   }
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Adiciona eventos de clique para abrir links nas cartas
     const cards = document.querySelectorAll(".card");
 
     cards.forEach(card => {
@@ -90,37 +75,46 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Função para navegar pela galeria de imagens
 document.addEventListener("DOMContentLoaded", function () {
     const nextButton = document.querySelector(".next-btn");
     const prevButton = document.querySelector(".prev-btn");
     const galleryImages = document.querySelectorAll(".gallery-image");
 
     const middleIndex = Math.floor(galleryImages.length / 2);
-    let currentIndex = middleIndex;
+    let currentIndex = 0;
 
+    // Função para dar zoom à imagem a ser visualizada
     function showImage(index) {
         galleryImages.forEach((image, i) => {
             const isMiddle = i === index;
             image.classList.toggle("zoomed", isMiddle);
         });
 
-        const offset = (middleIndex - index) * (galleryImages[0].offsetWidth + 100);
+        const offset = (middleIndex - index) * (galleryImages[0].offsetWidth + 240);
         document.querySelector('.gallery-images').style.transform = `translateX(${offset}px)`;
     }
 
+    // Função para ajustar o índice da imagem
+    function adjustIndex(index) {
+        return (index + galleryImages.length) % galleryImages.length;
+    }
+
+    // Para os botões de próxima imagem e imagem anterior
     nextButton.addEventListener("click", function () {
-        currentIndex = (currentIndex + 1) % galleryImages.length;
+        currentIndex = adjustIndex(currentIndex + 1);
         showImage(currentIndex);
     });
 
     prevButton.addEventListener("click", function () {
-        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        currentIndex = adjustIndex(currentIndex - 1);
         showImage(currentIndex);
     });
 
-    showImage(currentIndex);
+    showImage(0); // Mostra a primeira imagem ao carregar a página
 });
 
+// Cursor personalizado
 document.addEventListener("DOMContentLoaded", function () {
     const cursor = document.querySelector('.cursor');
 
@@ -137,6 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 });
 
+// Animação de entrada dos elementos hidden
 document.addEventListener("DOMContentLoaded", function () {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {

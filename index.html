@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- As três linhas seguintes servem para limpar a cache sempre que a página é recarregada, para ser atualizada -->
     <meta http-equiv='cache-control' content='no-cache'> 
-    <meta http-equiv='expires' content='0'> 
+    <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
+    <link rel="icon" href="/Portfolio/images/arrow.png" type="image/x-icon">
+    <!-- Link para os ficheiros CSS e JS -->
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <!-- Links para as fontes e icones -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <title>António Cruz - Portfolio</title>
+    <title>António Cruz - Engenheiro Informático</title>
 </head>
 <body>
+    <!-- Div para definir o cursor e as correspondentes animações em CSS -->
     <div class="cursor"></div>
-    <div id="name-screen" class="name-screen">
-        <h2 class="huge-name fade-in">ANTÓNIO CRUZ</h2>
-    </div>
+    <!-- Secção inicial e principal, com o CV, fotografia de perfil e contactos -->
     <section id="home" class="hidden">
         <div class="text">
             <p class="center bigHome">Olá! O meu nome é</p>
+            <!-- O nome tem um efeito feito em JS -->
             <h1 data-value="ANTÓNIO CRUZ">ANTÓNIO CRUZ</h1>
             <p class="center bigHome">e sou recém-licenciado em Engenharia Informática,</p>
             <p class="center mediumHome"> para além de ser um entusiasta em Inteligência Artificial,
@@ -29,7 +33,7 @@
                 Procuro agora uma oportunidade de trabalho para desenvolver as minhas capacidades e crescer como profissional e como pessoa.
             </p>
             <div class="cv">
-                <a href="/Portfolio/images/CV - AntonioCruz.pdf" target="_blank">Curriculum Vitae</a>
+                <a href="/Portfolio/files/CV - AntonioCruz.pdf" target="_blank">Curriculum Vitae</a>
             </div>
         </div>
         <div class="image">
@@ -37,6 +41,7 @@
                 <span></span>
                 <img id="me" src="/Portfolio/images/me.jpg" alt="me.jpg">
             </div>
+            <!-- Div para fazer um efeito em volta da imagem em CSS -->
             <div class="border-blur"></div>
             <h2>Contacte-me</h2>
             <p class="medium mail"><i class="fa-solid fa-square-envelope mail"></i> appaiscruz@gmail.com</p>
@@ -48,95 +53,135 @@
             </div>
         </div>
     </section>
-
+    <!-- Secção Sobre Mim, com uma galeria de imagens e texto -->
     <section id="about" class="hidden">
         <h2>Sobre Mim</h2>
         <div class="gallery">
             <div class="gallery-images">
                 <div class="gallery-image first">
                     <div class="image-wrapper">
-                        <img src="/Portfolio/images/me.jpg" alt="me" class="zoomed-image">
-                        <div class="zoomed-text">example here...</div>
+                        <img src="/Portfolio/images/secundario.jpg" alt="secundario" class="zoomed-image"> <!-- Secundário -->
+                        <div class="zoomed-text">Depois de três anos cheios de aventuras e aprendizagens no curso de Ciências e Tecnologias, na Escola Secundária Frei Heitor Pinto, que terminei com média de 17 valores, ...</div>
                     </div>
                 </div>
                 <div class="gallery-image">
                     <div class="image-wrapper">
-                        <img src="/Portfolio/images/money.png" alt="money" class="zoomed-image">
-                        <div class="zoomed-text">example here...</div>
+                        <img src="/Portfolio/images/uni1.jpg" alt="universidade" class="zoomed-image" style="margin-left: -90px;"> <!-- Entrada na UBI -->
+                        <div class="zoomed-text">... ingressei no ensino superior, em setembro de 2021, com um grande sorriso por estar a concretizar o sonho de estudar aquilo que sempre quis, ...</div>
                     </div>
                 </div>
                 <div class="gallery-image">
                     <div class="image-wrapper">
-                        <img src="/Portfolio/images/sentimentalyst.png" alt="sentimentalyst" class="zoomed-image">
-                        <div class="zoomed-text">example here...</div>
+                        <img src="/Portfolio/images/uni2.jpg" alt="universidade" class="zoomed-image" style="margin-left: -90px;"> <!-- Um momento feliz na UBI -->
+                        <div class="zoomed-text">... o que eu não sabia era que o verdadeiro sonho ia durar três anos, a começar naquele dia. Foram três anos de muito empenho, evolução pessoal e profissional, ...</div>
                     </div>
                 </div>
                 <div class="gallery-image">
                     <div class="image-wrapper">
-                        <img src="/Portfolio/images/me.jpg" alt="me" class="zoomed-image"> <!-- Foto minha descontraído -->
-                        <div class="zoomed-text">Este sou eu! Um jovem de 20 anos prestes a terminar a sua licenciatura, mas ainda com muito para aprender.</div>
+                        <img src="/Portfolio/images/uni3.jpg" alt="universidade" class="zoomed-image" style="margin-left: -90px;"> <!-- Praxe -->
+                        <div class="zoomed-text">... para além de imensos momentos únicos que a UBI me proporcionou e que nunca esquecerei, bem como as pessoas que me ajudaram a ter uma experiência universitária tão especial.</div>
                     </div>
                 </div>
                 <div class="gallery-image">
                     <div class="image-wrapper">
-                        <img src="/Portfolio/images/money.png" alt="money" class="zoomed-image"> <!-- Foto sobre algum trabalho, ou de mim a estudar/trabalhar -->
-                        <div class="zoomed-text">Apesar de gostar um pouco de tudo dentro da informática, sou um entusiasta em Inteligência Artificial, Desenvolvimento 
-                            de Software e Desenvolvimento de Jogos Digitais.
-                        </div>
+                        <img src="/Portfolio/images/AI.jpg" alt="inteligencia artificial" class="zoomed-image" style="margin-left: -90px;"> <!-- Inteligência Artificial -->
+                        <div class="zoomed-text">Apesar de gostar um pouco de tudo dentro da informática, ao fim destes três anos tornei-me um entusiasta em Inteligência Artificial, Desenvolvimento de Software e Desenvolvimento de Jogos Digitais.</div>
                     </div>
                 </div>
                 <div class="gallery-image">
                     <div class="image-wrapper">
-                        <img src="/Portfolio/images/orca.jpg" alt="sentimentalyst" class="zoomed-image"> <!-- Piscina da Orca -->
-                        <div class="zoomed-text">Já tive algumas experiências no mundo no trabalho, como quando trabalhei np bar da Piscina da Orca...</div>
+                        <img src="/Portfolio/images/orca.jpg" alt="orca" class="zoomed-image"> <!-- Piscina da Orca -->
+                        <div class="zoomed-text">Já tive algumas experiências no mundo no trabalho, como quando trabalhei no bar da Piscina da Orca, no verão de 2022, onde aprendi a trabalhar em equipa e a interagir com o público, ...</div>
                     </div>
                 </div>
                 <div class="gallery-image">
                     <div class="image-wrapper">
-                        <img src="/Portfolio/images/celfinet.jpg" alt="sentimentalyst" class="zoomed-image"> <!-- Celfinet -->
-                        <div class="zoomed-text">... e o estágio de verão que fiz na Celfinet</div>
+                        <img src="/Portfolio/images/celfinet.jpg" alt="celfinet" class="zoomed-image" style="margin-left: -100px;"> <!-- Celfinet -->
+                        <div class="zoomed-text">... e o estágio de verão que fiz na Celfinet, em 2023, onde aprendi a trabalhar com dados e desenvolvi as minhas capacidades de apresentação, em português e em inglês, entre muitas outras coisas.</div>
                     </div>
                 </div>
                 <div class="gallery-image">
                     <div class="image-wrapper">
-                        <img src="/Portfolio/images/sentimentalyst.png" alt="sentimentalyst" class="zoomed-image"> <!-- Foto de um jogo ou de mim a jogar -->
-                        <div class="zoomed-text">Sou um rapaz simples, que adora aproveitar o seu tempo livre para descontrair, jogar um pouco, ...</div>
+                        <img src="/Portfolio/images/jogo.jpg" alt="jogo" class="zoomed-image" style="margin-left: -40px;"> <!-- Jogo -->
+                        <div class="zoomed-text">Falando um pouco mais a nível pessoal, gosto de aproveitar o meu tempo livre para descontrair e fazer algumas coisas, como jogar um pouco, ...</div>
                     </div>
                 </div>
                 <div class="gallery-image">
                     <div class="image-wrapper">
-                        <img src="/Portfolio/images/sentimentalyst.png" alt="sentimentalyst" class="zoomed-image"> <!-- Foto de um livro ou um filme -->
+                        <img src="/Portfolio/images/livro.jpg" alt="livro" class="zoomed-image"> <!-- Livro -->
                         <div class="zoomed-text">... ler um livro ou ver filmes/séries, normalmente de ação, aventura, ficção científica e história, os meus estilos favoritos.</div>
                     </div>
                 </div>
                 <div class="gallery-image">
                     <div class="image-wrapper">
-                        <img src="/Portfolio/images/sentimentalyst.png" alt="sentimentalyst" class="zoomed-image"> <!-- Foto de algum momento histórico -->
-                        <div class="zoomed-text">... Também gosto de tirar tempo para aprender um pouco mais sobre o mundo que nos rodeia e o seu passado, pois adoro história, ...</div>
+                        <img src="/Portfolio/images/dunkirk.jpg" alt="Dunkirk" class="zoomed-image"> <!-- Filme Dunkirk -->
+                        <div class="zoomed-text">Também gosto de tirar tempo para aprender um pouco mais sobre o mundo que nos rodeia e o seu passado, pois adoro história, ...</div>
                     </div>
                 </div>
                 <div class="gallery-image">
                     <div class="image-wrapper">
-                        <img src="/Portfolio/images/espaco.jpg" alt="sentimentalyst" class="zoomed-image"> <!-- Foto do Espaço -->
-                        <div class="zoomed-text">... e aprender mais sobre matérias científicas, principalmente quando se tratam do Espaço 🤩.</div>
+                        <img src="/Portfolio/images/espaco.jpg" alt="espaco" class="zoomed-image"> <!-- Espaço -->
+                        <div class="zoomed-text">... e gosto principalmente de aprender mais sobre matérias científicas, principalmente quando se tratam do Espaço 🤩.</div>
                     </div>
                 </div>
                 <div class="gallery-image">
                     <div class="image-wrapper">
-                        <img src="/Portfolio/images/sentimentalyst.png" alt="sentimentalyst" class="zoomed-image"> <!-- Foto da guitarra -->
+                        <img src="/Portfolio/images/guitarra.jpg" alt="guitarra" class="zoomed-image"> <!-- Guitarra -->
                         <div class="zoomed-text">A música é a minha grande paixão, adoro tocar guitarra, um dos meus intrumentos favoritos e que estou a aprender a tocar sozinho, ...</div>
                     </div>
                 </div>
                 <div class="gallery-image">
                     <div class="image-wrapper">
-                        <img src="/Portfolio/images/coro2.jpg" alt="sentimentalyst" class="zoomed-image"> <!-- Foto do coro -->
-                        <div class="zoomed-text">... e também adoro cantar, na verdade gosto tanto que faço parte de um coro! É o Coro Misto da Beira Interior, onde já sou membro há mais de 7 anos, ...</div>
+                        <img src="/Portfolio/images/coro1.jpg" alt="coro Marrocos" class="zoomed-image" style="margin-left: -70px;"> <!-- Coro em Marrocos - Fado -->
+                        <div class="zoomed-text">... e também adoro cantar, na verdade gosto tanto que faço parte de um coro! É o Coro Misto da Beira Interior, onde já sou membro há mais de 6 anos, ...</div>
                     </div>
                 </div>
                 <div class="gallery-image">
-                    <div class="image-wrapper last">
-                        <img src="/Portfolio/images/coro3.JPG" alt="sentimentalyst" class="zoomed-image"> <!-- Foto do coro -->
-                        <div class="zoomed-text">... e onde já passei muitas boas memórias, tendo viajado para outros países várias vezes para fazer concertos e participar em concursos.</div>
+                    <div class="image-wrapper">
+                        <img src="/Portfolio/images/coro3.jpg" alt="coro Croácia" class="zoomed-image" style="margin-left: -100px;"> <!-- Coro na Croácia - Concurso -->
+                        <div class="zoomed-text">... tendo viajado para outros países várias vezes para fazer concertos e participar em concursos 🥇, ...</div>
+                    </div>
+                </div>
+                <div class="gallery-image">
+                    <div class="image-wrapper">
+                        <img src="/Portfolio/images/coro2.jpg" alt="coro França" class="zoomed-image" style="margin-left: -100px;"> <!-- Coro em França - Renascença -->
+                        <div class="zoomed-text">... e onde já passei muito boas memórias, no meio de muito trabalho e dedicação, centenas de ensaios, estágios e concertos de todos os géneros e feitios.</div>
+                    </div>
+                </div>
+                <div class="gallery-image">
+                    <div class="image-wrapper">
+                        <img src="/Portfolio/images/kalorama.jpeg" alt="kalorama" class="zoomed-image"> <!-- Kalorama -->
+                        <div class="zoomed-text">Mas a melhor parte de todos os bons momentos é sem dúvida ter a companhia de quem mais gosto, de quem é importante para mim e de quem torna os momentos verdadeiramente inesquecíveis, ...</div>
+                    </div>
+                </div>
+                <div class="gallery-image">
+                    <div class="image-wrapper">
+                        <img src="/Portfolio/images/<3.jpg" alt="kalorama" class="zoomed-image"> <!-- ❤️ -->
+                        <div class="zoomed-text">... pois é importante não esquecer que para ter um bom momento, uma boa história ou uma boa memória, não importa o local, mas sim quem faz esse local especial.</div>
+                    </div>
+                </div>
+                <div class="gallery-image">
+                    <div class="image-wrapper">
+                        <img src="/Portfolio/images/familia2.jpg" alt="kalorama" class="zoomed-image" style="margin-left: -80px;"> <!-- Família - Voluntariado -->
+                        <div class="zoomed-text">Mais importante ainda é não esquecer quem sempre está do nosso lado, nos bons e nos maus momentos, quem faz o possível e o impossível por nós e nos ajuda a crescer, ...</div>
+                    </div>
+                </div>
+                <div class="gallery-image">
+                    <div class="image-wrapper">
+                        <img src="/Portfolio/images/familia.jpg" alt="kalorama" class="zoomed-image"> <!-- Família -->
+                        <div class="zoomed-text">... pelo que agradeço todos dias à minha família, principalmente aos meus pais e irmão, que sempre me deram mais do que aquilo que posso pedir e me ajudaram a ser o homem que sou hoje.</div>
+                    </div>
+                </div>
+                <div class="gallery-image">
+                    <div class="image-wrapper">
+                        <img src="/Portfolio/images/coro-eu.jpg" alt="me" class="zoomed-image" style="margin-left: -90px;"> <!-- Eu -->
+                        <div class="zoomed-text">E agora que já sabe um pouco mais sobre mim, espero poder vir a conhece-lo(a) também! Posso estar a terminar a licenciatura, mas ainda tenho muito para aprender, capacidades por desenvolver ...</div>
+                    </div>
+                </div>
+                <div class="gallery-image last">
+                    <div class="image-wrapper">
+                        <img src="/Portfolio/images/eu.jpg" alt="me" class="zoomed-image"> <!-- Eu -->
+                        <div class="zoomed-text">... e acima de tudo, tenho muito para dar! Estou pronto para dar o próximo passo, dar o melhor de mim e contribuir com o meu trabalho e a minha total dedicação.</div>
                     </div>
                 </div>
             </div>
@@ -144,7 +189,7 @@
             <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
         </div>    
     </section>    
-
+    <!-- Secção de Projetos realizados, com o respetivo link do GitHub -->
     <section id="projects" class="hidden">
         <h2>Projetos</h2>
         <div id="cards">
@@ -174,27 +219,27 @@
             </div>
         </div>
     </section>
-
-    <section class="hidden">
+    <!-- Secção de Certificados adquiridos, com os respetivos links para os PDFs -->
+    <section id="certsSec" class="hidden">
         <h2>Certificados</h2>
         <div id="certs">
-            <div class="certificate-box" onclick="openPdf('/Portfolio/images/Summer_Internship.pdf')">
+            <div class="certificate-box" onclick="openPdf('/Portfolio/files/Summer_Internship.pdf')">
                 <h3>Estágio de Verão</h3>
                 <p>No Departamento de Data Management & Analytics da Celfinet</p>
             </div>
-            <div class="certificate-box" onclick="openPdf('/Portfolio/images/IOT.pdf')">
+            <div class="certificate-box" onclick="openPdf('/Portfolio/files/IOT.pdf')">
                 <h3>Internet Das Coisas</h3>
                 <p>Formação Sobre os Conceitos Básicos da Internet Of Things (IOT)</p>
             </div>
-            <div class="certificate-box" onclick="openPdf('/Portfolio/images/Telecom.pdf')">
+            <div class="certificate-box" onclick="openPdf('/Portfolio/files/Telecom.pdf')">
                 <h3>Telecomunicações</h3>
                 <p>Formação Sobre os Conceitos Básicos de Telecomunicações</p>
             </div>
-            <div class="certificate-box" onclick="openPdf('/Portfolio/images/Scrum.pdf')">
+            <div class="certificate-box" onclick="openPdf('/Portfolio/files/Scrum.pdf')">
                 <h3>Scrum</h3>
                 <p>Gestão de Projetos com Métodos Ágeis</p>
             </div>
-            <div class="certificate-box" onclick="openPdf('/Portfolio/images/PSAnimais.pdf')">
+            <div class="certificate-box" onclick="openPdf('/Portfolio/files/PSAnimais.pdf')">
                 <h3>Primeiros Socorros Animais</h3>
                 <p>Nunca se sabe quando vai ser preciso! 😉</p>
             </div>
