@@ -15,6 +15,11 @@ A website where I tell you a bit more about myself, my projects and my skills.
 - [X] Projects
 - [X] Certificates
 
+## TODO List
+
+- [ ] Compatibility with Android and IOS
+- [ ] English Translation
+
 ## Credits
 
 I've taken some ideas from the following YouTube channels, which I totally recommend you to check out.
