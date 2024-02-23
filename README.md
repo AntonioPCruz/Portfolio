@@ -19,6 +19,7 @@ A website where I tell you a bit more about myself, my projects and my skills.
 
 - [ ] Compatibility with Android and IOS
 - [ ] English Translation
+- [ ] Skills List
 
 ## Credits
 
