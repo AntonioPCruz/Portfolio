@@ -124,7 +124,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 40px;
+    padding-top: 10px;
 }
 
 /* Estilos para o texto */
@@ -167,7 +167,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 0px;
     margin-bottom: 20px;
 }
 
@@ -195,7 +195,7 @@ h2 {
 h1 {
     font-family: 'Source Code Pro', monospace;
     font-weight: bold;
-    font-size: clamp(3rem, 10vw, 4rem);
+    font-size: clamp(3rem, 10vw, 5rem);
     padding: 0rem clamp(1rem, 2vw, 3rem);
     border-radius: clamp(0.4rem, 0.75vw, 1rem);
 }
@@ -212,7 +212,11 @@ h1:hover {
 }
 
 .mediumHome {
-    font-size: 1.15em;
+    font-size: 1.25em;
+}
+
+.highlight {
+    color: #696969;
 }
 
 /* Estilos para a disposição do conteúdo da secção principal */
